@@ -82,7 +82,7 @@
 				"typeProperties": {
 					"functionName": "HttpTrigger1",
 					"body": {
-						"value": "{\n    \"subscriptionID\" : \"@{pipeline().parameters.subscriptionID}\"    \n}\n",
+						"value": "{\n    \"subscriptionID\" : \"@{pipeline().parameters.subscriptionID}\"    \n     \"resourceGroup\" : \"@{pipeline().parameters.resourceGroup}\"  \n}\n",
 						"type": "Expression"
 					},
 					"method": "POST"
@@ -97,6 +97,10 @@
 			"subscriptionID": {
 				"type": "string",
 				"defaultValue": "1"
+			},
+			"resourceGroup": {
+				"type": "string",
+				"defaultValue": "2"
 			}
 		},
 		"annotations": []
