@@ -1,9 +1,9 @@
 {
-	"name": "Pipeline 1",
+	"name": "Pipeline 3",
 	"properties": {
 		"activities": [
 			{
-				"name": "CopyStorage",
+				"name": "Copy data1",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -49,60 +49,47 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText1",
+						"referenceName": "DelimitedText3",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText2",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					}
 				]
 			},
 			{
-				"name": "Azure Function1",
-				"type": "AzureFunctionActivity",
+				"name": "Execute Pipeline1",
+				"type": "ExecutePipeline",
 				"dependsOn": [
 					{
-						"activity": "CopyStorage",
+						"activity": "Copy data1",
 						"dependencyConditions": [
 							"Completed"
 						]
 					}
 				],
 				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
 					"secureInput": false
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"functionName": "HttpTrigger1",
-					"body": {
-						"value": "{\n    \"subscriptionID\" : \"@{pipeline().parameters.subscriptionID}\"    \n     \"resourceGroup\" : \"@{pipeline().parameters.resourceGroup}\"  \n}\n",
-						"type": "Expression"
+					"pipeline": {
+						"referenceName": "Pipeline 4",
+						"type": "PipelineReference"
 					},
-					"method": "POST"
-				},
-				"linkedServiceName": {
-					"referenceName": "AzureFunction1",
-					"type": "LinkedServiceReference"
+					"waitOnCompletion": true,
+					"parameters": {
+						"actinp": {
+							"value": "@activity('Copy data1').output",
+							"type": "Expression"
+						}
+					}
 				}
 			}
 		],
-		"parameters": {
-			"subscriptionID": {
-				"type": "string",
-				"defaultValue": "1"
-			},
-			"resourceGroup": {
-				"type": "string",
-				"defaultValue": "2"
-			}
-		},
 		"variables": {
 			"duration": {
 				"type": "String"

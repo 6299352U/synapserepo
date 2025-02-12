@@ -1,0 +1,38 @@
+{
+	"name": "Pipeline 4",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "durations",
+					"value": {
+						"value": "@pipeline().parameters.actinp.executionDetails[0].duration",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"actinp": {
+				"type": "object"
+			}
+		},
+		"variables": {
+			"duration": {
+				"type": "String"
+			},
+			"durations": {
+				"type": "Integer"
+			}
+		},
+		"annotations": []
+	}
+}
