@@ -1,0 +1,29 @@
+name: Deploy Azure Functions
+
+on:
+  push:
+    branches:
+      - main  # or the branch you want to deploy from
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Azure CLI
+      uses: azure/setup-azure-cli@v1
+
+    - name: Login to Azure
+      shell: pwsh
+      run: |
+        $ErrorActionPreference = 'Stop'
+        az login --service-principal -u ${{ secrets.AZURE_CREDENTIALS.clientId }} -p ${{ secrets.AZURE_CREDENTIALS.clientSecret }} --tenant ${{ secrets.AZURE_CREDENTIALS.tenantId }}
+
+    - name: Deploy to Azure Functions
+      shell: pwsh
+      run: |
+        $ErrorActionPreference = 'Stop'
+        az functionapp deployment source config-zip -g <resource-group> -n <function-app-name> --src <path-to-zip-file>
