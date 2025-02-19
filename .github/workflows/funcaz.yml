@@ -26,4 +26,4 @@ jobs:
       shell: pwsh
       run: |
         $ErrorActionPreference = 'Stop'
-        az functionapp deployment source config-zip -g powerAuto -n myApp --src <path-to-zip-file>
+        az functionapp deployment source config-zip -g powerAuto -n myApp --src deployment/func
