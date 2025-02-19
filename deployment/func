@@ -1,0 +1,41 @@
+{
+    "id": "/subscriptions/559281c3-94d8-4249-be82-e087991bc59a/resourceGroups/powerAuto/providers/Microsoft.Web/sites/powerautosnows/functions/HttpTrigger1",
+    "name": "powerautosnows/HttpTrigger1",
+    "type": "Microsoft.Web/sites/functions",
+    "location": "Canada Central",
+    "properties": {
+        "name": "HttpTrigger1",
+        "function_app_id": null,
+        "script_root_path_href": "https://powerautosnows.azurewebsites.net/admin/vfs/site/wwwroot/HttpTrigger1/",
+        "script_href": "https://powerautosnows.azurewebsites.net/admin/vfs/site/wwwroot/HttpTrigger1/run.ps1",
+        "config_href": "https://powerautosnows.azurewebsites.net/admin/vfs/site/wwwroot/HttpTrigger1/function.json",
+        "test_data_href": "https://powerautosnows.azurewebsites.net/admin/vfs/data/Functions/sampledata/HttpTrigger1.dat",
+        "secrets_file_href": null,
+        "href": "https://powerautosnows.azurewebsites.net/admin/functions/HttpTrigger1",
+        "config": {
+            "bindings": [
+                {
+                    "authLevel": "function",
+                    "type": "httpTrigger",
+                    "direction": "in",
+                    "name": "Request",
+                    "methods": [
+                        "get",
+                        "post"
+                    ]
+                },
+                {
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
+                }
+            ]
+        },
+        "files": null,
+        "test_data": "{\"body\":\"{\\r\\n    \\\"name\\\": \\\"Azure\\\"\\r\\n}\\r\\n\",\"headers\":[],\"method\":\"post\",\"queryStringParams\":[]}",
+        "invoke_url_template": "https://powerautosnows.azurewebsites.net/api/httptrigger1",
+        "language": "powershell",
+        "isDisabled": false
+    },
+    "apiVersion": "2024-04-01"
+}
