@@ -13,8 +13,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Setup Azure CLI
-      uses: azure/cli@v2
+ 
 
     - name: Login to Azure
       shell: pwsh
