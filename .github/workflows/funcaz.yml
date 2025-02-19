@@ -20,10 +20,10 @@ jobs:
       shell: pwsh
       run: |
         $ErrorActionPreference = 'Stop'
-        az login --service-principal -u ${{ secrets.AZURE_CREDENTIALS.clientId }} -p ${{ secrets.AZURE_CREDENTIALS.clientSecret }} --tenant ${{ secrets.AZURE_CREDENTIALS.tenantId }}
+        az login --service-principal -u ${{ secrets.AZCRED.clientId }} -p ${{ secrets.AZCRED.clientSecret }} --tenant ${{ secrets.AZCRED.tenantId }}
 
     - name: Deploy to Azure Functions
       shell: pwsh
       run: |
         $ErrorActionPreference = 'Stop'
-        az functionapp deployment source config-zip -g <resource-group> -n <function-app-name> --src <path-to-zip-file>
+        az functionapp deployment source config-zip -g powerAuto -n myApp --src <path-to-zip-file>
