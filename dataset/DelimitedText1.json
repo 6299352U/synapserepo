@@ -2,7 +2,7 @@
 	"name": "DelimitedText1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "powerautosnow-WorkspaceDefaultStorage",
+			"referenceName": "temppipe-WorkspaceDefaultStorage",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -11,8 +11,8 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "test.csv",
-				"folderPath": "powrauto",
-				"fileSystem": "powerauto"
+				"folderPath": "temppipe",
+				"fileSystem": "temppipe"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
@@ -20,5 +20,6 @@
 			"quoteChar": "\""
 		},
 		"schema": []
-	}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
 }
