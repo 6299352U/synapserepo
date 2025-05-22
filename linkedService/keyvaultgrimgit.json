@@ -1,0 +1,10 @@
+{
+	"name": "keyvaultgrimgit",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://testposteamskey.vault.azure.net/"
+		}
+	}
+}
