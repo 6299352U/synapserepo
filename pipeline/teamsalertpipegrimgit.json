@@ -15,7 +15,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"functionName": "testpostteamsgitGrimGit",
+					"functionName": "funcDeployment",
 					"body": "body",
 					"method": "POST"
 				},
