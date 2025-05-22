@@ -1,0 +1,29 @@
+{
+	"name": "teamsalertpipegrimgit",
+	"properties": {
+		"activities": [
+			{
+				"name": "funcgrimgit",
+				"type": "AzureFunctionActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"functionName": "testpostteamsgitGrimGit",
+					"method": "POST"
+				},
+				"linkedServiceName": {
+					"referenceName": "funcgrimgitlink",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": []
+	}
+}
