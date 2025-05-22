@@ -16,6 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"functionName": "testpostteamsgitGrimGit",
+					"body": "body",
 					"method": "POST"
 				},
 				"linkedServiceName": {
