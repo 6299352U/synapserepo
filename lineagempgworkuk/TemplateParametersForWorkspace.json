@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "lineagempgworkuk"
+		},
+		"AzureFunction1_functionKey": {
+			"value": ""
+		},
+		"lineagempgworkuk-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:lineagempgworkuk.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"powerautosnow-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:powerautosnow.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"studsynapse-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:studsynapse.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"temppipe-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:temppipe.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"AzureFunction1_properties_typeProperties_functionAppUrl": {
+			"value": "https://powerautosnows.azurewebsites.net"
+		},
+		"funcgrimgitlink_properties_typeProperties_functionAppUrl": {
+			"value": "https://testpostteamsgitgrimgit.azurewebsites.net"
+		},
+		"keyvaultgrimgit_properties_typeProperties_baseUrl": {
+			"value": "https://testposteamskey.vault.azure.net/"
+		},
+		"lineagempgworkuk-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://lineagempguk.dfs.core.windows.net"
+		},
+		"powerautosnow-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://powerauto.dfs.core.windows.net"
+		},
+		"studsynapse-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://studstorage.dfs.core.windows.net"
+		},
+		"temppipe-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://temppipe.dfs.core.windows.net"
+		}
+	}
+}
